@@ -3,15 +3,21 @@ package com.example.productorderservice.product;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(MockitoExtension.class)
 class ProductServiceTest {
     private ProductService productService;
-    private StubProductPort productPort = new StubProductPort();
+    private ProductPort productPort;
 
     @BeforeEach
     void setUp(){
+        productPort = Mockito.mock(ProductPort.class);
+
         productService = new ProductService(productPort);
     }
     @Test
@@ -19,7 +25,8 @@ class ProductServiceTest {
         Long productId = 1L;
         UpdateProductRequest request = new UpdateProductRequest("상품 수정", 2000, DiscountPolicy.NONE);
         Product product = new Product("상품명", 1000, DiscountPolicy.NONE);
-        productPort.getProduct_will_return = product;
+
+        Mockito.when(productPort.getProduct(productId)).thenReturn(product);
 
         productService.updateProduct(productId, request);
 
@@ -28,17 +35,17 @@ class ProductServiceTest {
 
     }
 
-    private static class StubProductPort implements ProductPort {
-        public Product getProduct_will_return;
-
-        @Override
-        public void save(Product product) {
-
-        }
-
-        @Override
-        public Product getProduct(Long productId) {
-            return getProduct_will_return;
-        }
-    }
+//    private static class StubProductPort implements ProductPort {
+//        public Product getProduct_will_return;
+//
+//        @Override
+//        public void save(Product product) {
+//
+//        }
+//
+//        @Override
+//        public Product getProduct(Long productId) {
+//            return getProduct_will_return;
+//        }
+//    }
 }
