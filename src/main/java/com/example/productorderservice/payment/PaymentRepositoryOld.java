@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Repository
-class PaymentRepository {
+public class PaymentRepositoryOld {
     private Map<Long, Payment> persistence = new HashMap<>();
     private Long sequence = 0L;
 
