@@ -1,5 +1,6 @@
 package com.example.productorderservice.product;
 
+import com.example.productorderservice.product.domain.Product;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;

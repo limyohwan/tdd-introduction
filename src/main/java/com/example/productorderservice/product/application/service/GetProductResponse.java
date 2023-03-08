@@ -1,9 +1,11 @@
-package com.example.productorderservice.product;
+package com.example.productorderservice.product.application.service;
 
+import com.example.productorderservice.product.domain.DiscountPolicy;
 import lombok.Getter;
 import org.springframework.util.Assert;
 
 @Getter
+public
 class GetProductResponse {
     private final Long id;
     private final String name;

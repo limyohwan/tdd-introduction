@@ -1,10 +1,10 @@
 package com.example.productorderservice.product;
 
-import org.junit.jupiter.api.BeforeEach;
+import com.example.productorderservice.product.application.port.ProductPort;
+import com.example.productorderservice.product.application.service.GetProductResponse;
+import com.example.productorderservice.product.application.service.ProductService;
+import com.example.productorderservice.product.application.service.UpdateProductRequest;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;

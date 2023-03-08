@@ -1,5 +1,6 @@
 package com.example.productorderservice.payment;
 
+import com.example.productorderservice.payment.domain.Payment;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;

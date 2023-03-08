@@ -1,8 +1,9 @@
-package com.example.productorderservice.product;
+package com.example.productorderservice.product.application.service;
 
+import com.example.productorderservice.product.domain.DiscountPolicy;
 import org.springframework.util.Assert;
 
-class UpdateProductRequest {
+public class UpdateProductRequest {
     private final String name;
     private final int price;
     private final DiscountPolicy discountPolicy;

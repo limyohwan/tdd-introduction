@@ -1,5 +1,6 @@
 package com.example.productorderservice.product;
 
+import com.example.productorderservice.product.domain.DiscountPolicy;
 import org.springframework.util.Assert;
 
 public class ProductOld {

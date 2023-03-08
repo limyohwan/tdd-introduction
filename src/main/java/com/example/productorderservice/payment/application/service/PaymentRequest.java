@@ -1,8 +1,8 @@
-package com.example.productorderservice.payment;
+package com.example.productorderservice.payment.application.service;
 
 import org.springframework.util.Assert;
 
-class PaymentRequest {
+public class PaymentRequest {
     private final Long orderId;
     private final String cardNumber;
 
