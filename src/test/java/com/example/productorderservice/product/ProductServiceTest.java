@@ -19,12 +19,12 @@ class ProductServiceTest {
 
     @Autowired
     private ProductPort productPort;
-    
+
     @Test
     void 상품수정(){
         productService.addProduct(ProductSteps.상품등록요청_생성());
         Long productId = 1L;
-        UpdateProductRequest request = new UpdateProductRequest("상품 수정", 2000, DiscountPolicy.NONE);
+        UpdateProductRequest request = ProductSteps.상품수정요청_생성();
 
         productService.updateProduct(productId, request);
 
@@ -34,5 +34,7 @@ class ProductServiceTest {
         assertThat(productResponse.getPrice()).isEqualTo(2000);
 
     }
+
+
 
 }
